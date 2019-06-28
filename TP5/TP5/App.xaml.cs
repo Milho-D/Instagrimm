@@ -1,4 +1,5 @@
 ﻿using System;
+using TP5.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace TP5
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new AuthentificationPage());
         }
 
         protected override void OnStart()

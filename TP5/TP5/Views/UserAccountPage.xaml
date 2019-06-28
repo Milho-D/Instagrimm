@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:TP5.ViewModels"
+             x:Class="TP5.Views.UserAccountPage"
+             Title="Your Instagrimm Account">
+    
+    <ContentPage.BindingContext>
+        <viewmodels:UserAccountViewModel></viewmodels:UserAccountViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <StackLayout Orientation="Horizontal">
+                <Label VerticalOptions="Center" 
+                       HorizontalOptions="Start"
+                       Text="{Binding Email, StringFormat='Email address : {0}'}"></Label>
+                <Button VerticalOptions="Center" 
+                        HorizontalOptions="EndAndExpand"
+                        Text="Deconnection"
+                        Command="{Binding CmdLogoff}"></Button>
+             </StackLayout>
+            
+             <Label Text="{Binding WelcomeMessage}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
